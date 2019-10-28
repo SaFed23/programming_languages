@@ -1,0 +1,14 @@
+<% include head %>
+    <div class="col-md-6 center-block">
+        <form action="/posts/update/<%= post.id %>" method="POST">
+            <label>Title of posts: </label>
+            <input type="text " class="form-control " name="title" value="<%= post.title %>">
+            <div class="form-group">
+                <label>Context: </label>
+                <textarea id="my-textarea" class="form-control" name="context" rows="7"><%= post.context %></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Update">
+        </form>
+        <br>
+    </div>
+    <% include foot %>

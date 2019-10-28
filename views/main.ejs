@@ -1,0 +1,12 @@
+<% include head %>
+    <br>
+    <h2>Three random posts: </h2>
+    <br>
+    <% posts.forEach(post => { %>
+        <p>
+            <a href="/posts/<%= post.id %>">
+                <%= post.title %>
+            </a>
+            <p>
+                <% }) %>
+                    <% include foot %>

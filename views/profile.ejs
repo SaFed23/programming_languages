@@ -1,0 +1,45 @@
+<% include head %>
+    <div class="col-md-6 center-block">
+        <h4>Your profile</h4>
+        <br>
+        <br>
+        <form action="/users/profile" method="POST">
+            <label>Your login: </label>
+            <input type="text" class="form-control" name="login" value="<%= locals.login %>">
+            <br>
+            <label>Your e-mail: </label>
+            <input type="email" class="form-control" name="email" value="<%= user.email %>">
+            <br>
+            <input type="submit" class="btn btn-primary" value="Change info">
+        </form>
+        <br>
+    </div>
+    <br>
+    <div class="col-md-6 center-block">
+        <h4>New posts: </h4>
+    </div>
+    <% Object.keys(subscribes).forEach(language => { %>
+        <div class="col-md-6 center-block">
+            <h4>
+                <%= language %>
+            </h4>
+            <br>
+            <br>
+            <% subscribes[language].forEach(post => { %>
+                <p>
+                    <a href="/posts/<%= post.id %>">
+                        <%= post.title %>
+                    </a>
+                </p>
+                <br>
+                <% }) %>
+        </div>
+        <% }) %>
+            <div class="col-md-6 center-block">
+                <button type="submit" class="btn btn-primary">
+                    <a href="/users/readall" class="nav-link" style="color: white;">
+                        Read all
+                    </a>
+                </button>
+            </div>
+            <% include foot %>

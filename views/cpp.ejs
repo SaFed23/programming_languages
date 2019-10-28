@@ -1,0 +1,24 @@
+<% include head %>
+    <br>
+    <br>
+    <h3>
+        <%= title %>
+    </h3>
+    <% if (locals.login) { %>
+        <a href="/users/subscribe/cpp">Subscribe</a>
+        <% } %>
+            <br><br><br>
+            <% posts.forEach(post => { %>
+                <h4>
+                    <a href="/posts/<%= post.id %>">
+                        <%= post.title %>
+                    </a>
+                </h4>
+                <small><%= post.date %></small>
+                <br>
+                <% }) %>
+
+                    <% if (locals.login === "admin") {%>
+                        <a class="nav-link languages" href="/posts/new/cpp" id="">Add post</a>
+                        <% } %>
+                            <% include foot %>

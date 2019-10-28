@@ -1,0 +1,16 @@
+<% include head %>
+    <% users.forEach(user => { %>
+        <div class="col-md-6 center-block">
+            <h5>
+                <%= user.login %>
+            </h5>
+            <% if (user.login !== "admin") { %>
+                <a href="/users/delete/<%= user.id %>">Удалить</a>
+                <br><br>
+                <% } %>
+                    <p>
+                        <%= user.email %>
+                    </p>
+        </div>
+        <% }) %>
+            <% include foot %>

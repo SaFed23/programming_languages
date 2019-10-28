@@ -1,0 +1,17 @@
+<% include head %>
+
+    <div class="col-md-6 center-block">
+        <h3>
+            <%= post.title %>
+        </h3>
+        <p>
+            <%= post.context %>
+        </p>
+        <small><%= post.date %></small>
+        <% if (locals.login === "admin") {%>
+            <a class="nav-link languages" href="/posts/delete/<%= post.id %>" id="">Delete</a>
+            <a class="nav-link languages" href="/posts/update/<%= post.id %>" id="">Update</a>
+            <% } %>
+    </div>
+
+    <% include foot %>

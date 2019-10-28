@@ -1,0 +1,26 @@
+.nav {
+    background: #f8f9fa;
+    display: none;
+    border-radius: 3%;
+}
+
+.user-forms {
+    margin-top: 1%;
+    float: right;
+    text-align: center;
+}
+
+.languages {
+    margin-top: 1%;
+}
+
+body {
+    background: #c8dbed;
+}
+
+.center-block {
+    background: #f8f9fa;
+    margin-left: 23%;
+    margin-top: 2%;
+    text-align: center;
+}
